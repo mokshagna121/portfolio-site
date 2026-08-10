@@ -1417,6 +1417,12 @@
                 }
             }
 
+            @media (max-width: 799px) {
+                .cursor-dot, .cursor-outline {
+                    display: none !important;
+                }
+            }
+
             .cursor-dot {
                 width: 8px;
                 height: 8px;
@@ -1597,7 +1603,7 @@
                     -->
 
                     <img class="hero-photo"
-                        src="https://drive.google.com/uc?export=view&id=17Lqc2yJVJs98bHNVwSbwlww_b3HLGcHt"
+                        src="https://lh3.googleusercontent.com/d/17Lqc2yJVJs98bHNVwSbwlww_b3HLGcHt"
                         alt="Profile">
 
                 </div>
@@ -2480,7 +2486,7 @@
         const cursorDot = document.querySelector("[data-cursor-dot]");
         const cursorOutline = document.querySelector("[data-cursor-outline]");
 
-        if (cursorDot && cursorOutline && window.innerWidth > 800) {
+        if (cursorDot && cursorOutline) {
             window.addEventListener("mousemove", (e) => {
                 const posX = e.clientX;
                 const posY = e.clientY;
