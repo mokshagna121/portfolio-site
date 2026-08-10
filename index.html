@@ -2407,29 +2407,7 @@
 
         renderProjects(readProjects());
 
-        /* Media cards use the same browser-based editing approach. */
-        const mediaStorageKey = "pbmr-portfolio-media";
-        const mediaGrid = document.getElementById("mediaGrid");
-        const readMedia = () => {
-            try {
-                const saved = JSON.parse(localStorage.getItem(mediaStorageKey));
-                if (Array.isArray(saved) && saved.length) return saved;
-            } catch (_) { /* Start with the existing cards. */ }
-            const originalMedia = [...mediaGrid.querySelectorAll(".media-card")].map(card => ({
-                title: card.querySelector("h3")?.textContent.trim() || "Untitled",
-                description: card.querySelector("p")?.textContent.trim() || "",
-                image: card.querySelector("img")?.src || ""
-            }));
-            localStorage.setItem(mediaStorageKey, JSON.stringify(originalMedia));
-            return originalMedia;
-        };
-        const renderMedia = items => {
-            mediaGrid.innerHTML = items.map(item => `<div class="media-card reveal visible">
-                <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}">
-                <div class="media-overlay"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>
-            </div>`).join("");
-        };
-        renderMedia(readMedia());
+
 
         /* =========================================================
            MOBILE MENU
