@@ -1407,63 +1407,14 @@
                 }
             }
 
-            /* =========================================================
-               CUSTOM CURSOR
-            ========================================================== */
-            
-            @media (min-width: 800px) {
-                * {
-                    cursor: none !important;
-                }
-            }
 
-            @media (max-width: 799px) {
-                .cursor-dot, .cursor-outline {
-                    display: none !important;
-                }
-            }
-
-            .cursor-dot {
-                width: 8px;
-                height: 8px;
-                background-color: var(--blue);
-                position: fixed;
-                top: 0;
-                left: 0;
-                transform: translate(-50%, -50%);
-                border-radius: 50%;
-                z-index: 9999;
-                pointer-events: none;
-            }
-            
-            .cursor-outline {
-                width: 40px;
-                height: 40px;
-                border: 2px solid rgba(8, 124, 255, 0.5);
-                position: fixed;
-                top: 0;
-                left: 0;
-                transform: translate(-50%, -50%);
-                border-radius: 50%;
-                z-index: 9998;
-                pointer-events: none;
-                transition: width 0.2s, height 0.2s, background-color 0.2s;
-            }
-            
-            .cursor-hover {
-                width: 60px;
-                height: 60px;
-                background-color: rgba(8, 124, 255, 0.1);
-            }
         </style>
     </head>
 
 
 <body>
 
-    <!-- Cursor Elements -->
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
+
 
     <!-- Noise -->
     <div class="noise"></div>
@@ -2479,33 +2430,7 @@
 
         });
 
-        /* =========================================================
-           CUSTOM CURSOR
-        ========================================================== */
 
-        const cursorDot = document.querySelector("[data-cursor-dot]");
-        const cursorOutline = document.querySelector("[data-cursor-outline]");
-
-        if (cursorDot && cursorOutline) {
-            window.addEventListener("mousemove", (e) => {
-                const posX = e.clientX;
-                const posY = e.clientY;
-
-                cursorDot.style.left = `${posX}px`;
-                cursorDot.style.top = `${posY}px`;
-
-                cursorOutline.animate({
-                    left: `${posX}px`,
-                    top: `${posY}px`
-                }, { duration: 500, fill: "forwards" });
-            });
-
-            const interactables = document.querySelectorAll("a, button, input, textarea, .project-card, .service-card");
-            interactables.forEach(el => {
-                el.addEventListener("mouseenter", () => cursorOutline.classList.add("cursor-hover"));
-                el.addEventListener("mouseleave", () => cursorOutline.classList.remove("cursor-hover"));
-            });
-        }
 
         /* =========================================================
            3D TILT EFFECT
