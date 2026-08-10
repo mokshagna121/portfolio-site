@@ -27,8 +27,6 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                cursor: none;
-                /* Hide default cursor */
             }
 
             html {
@@ -1407,6 +1405,49 @@
                 .hero-buttons .btn {
                     width: 100%;
                 }
+            }
+
+            /* =========================================================
+               CUSTOM CURSOR
+            ========================================================== */
+            
+            @media (min-width: 800px) {
+                * {
+                    cursor: none !important;
+                }
+            }
+
+            .cursor-dot {
+                width: 8px;
+                height: 8px;
+                background-color: var(--blue);
+                position: fixed;
+                top: 0;
+                left: 0;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                z-index: 9999;
+                pointer-events: none;
+            }
+            
+            .cursor-outline {
+                width: 40px;
+                height: 40px;
+                border: 2px solid rgba(8, 124, 255, 0.5);
+                position: fixed;
+                top: 0;
+                left: 0;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                z-index: 9998;
+                pointer-events: none;
+                transition: width 0.2s, height 0.2s, background-color 0.2s;
+            }
+            
+            .cursor-hover {
+                width: 60px;
+                height: 60px;
+                background-color: rgba(8, 124, 255, 0.1);
             }
         </style>
     </head>
