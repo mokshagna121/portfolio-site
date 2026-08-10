@@ -16,6 +16,24 @@
         rel="stylesheet"
     >
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pittala Bala Mokshagna Reddy | Portfolio</title>
+    <meta name="description"
+          content="Portfolio of Pittala Bala Mokshagna Reddy — Computer Science Student, Developer, AI Enthusiast, Filmmaker and Content Creator.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
     <!-- Font Awesome -->
     <link
         rel="stylesheet"
@@ -32,6 +50,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            cursor: none; /* Hide default cursor */
         }
 
         html {
@@ -952,318 +971,144 @@
 
 
         /* =========================================================
-           ACHIEVEMENTS
+           CUSTOM CURSOR
+        ========================================================= */
+
+        .cursor-dot, .cursor-outline {
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background: var(--blue);
+        }
+        
+        .cursor-outline {
+            width: 40px; height: 40px;
+            border: 2px solid rgba(8, 124, 255, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        
+        .cursor-hover {
+            width: 60px; height: 60px;
+            background-color: rgba(8, 124, 255, 0.1);
+        }
+
+        /* =========================================================
+           TIMELINE (Experience & Education)
         ========================================================= */
 
         .timeline {
             position: relative;
-            max-width: 900px;
-            margin: auto;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        .timeline::before {
-            content: "";
-
+        .timeline::after {
+            content: '';
             position: absolute;
-
-            left: 15px;
-            top: 0;
-            bottom: 0;
-
-            width: 1px;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    var(--blue),
-                    transparent
-                );
+            width: 2px;
+            background: var(--border);
+            top: 0; bottom: 0; left: 50%;
+            margin-left: -1px;
         }
-
         .timeline-item {
+            padding: 10px 40px;
             position: relative;
-
-            padding-left: 55px;
-
-            margin-bottom: 40px;
+            background-color: inherit;
+            width: 50%;
         }
-
-        .timeline-dot {
+        .timeline-item::after {
+            content: '';
             position: absolute;
-
-            left: 9px;
-            top: 5px;
-
-            width: 13px;
-            height: 13px;
-
+            width: 16px; height: 16px;
+            right: -8px; top: 15px;
+            background-color: var(--bg);
+            border: 4px solid var(--blue);
             border-radius: 50%;
-
-            background: var(--blue);
-
-            box-shadow:
-                0 0 20px rgba(8,124,255,0.7);
+            z-index: 1;
         }
-
-        .timeline-card {
-            padding: 22px;
-
+        .timeline-left { left: 0; }
+        .timeline-right { left: 50%; }
+        .timeline-right::after { left: -8px; }
+        .timeline-content {
+            padding: 20px;
+            background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-
-            background: rgba(255,255,255,0.02);
+            border-radius: var(--radius);
         }
+        .timeline-content h3 { color: var(--blue); font-size: 16px; margin-bottom: 5px; }
+        .timeline-content h4 { font-size: 14px; margin-bottom: 10px; color: #ddd; }
+        .timeline-content p { font-size: 12px; color: #aaa; line-height: 1.6; }
 
-        .timeline-card small {
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--card);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            box-shadow: 0 15px 30px rgba(8, 124, 255, 0.15);
+            border-color: var(--blue);
+        }
+        .service-icon {
+            font-size: 40px;
             color: var(--blue);
-            font-size: 9px;
-        }
-
-        .timeline-card h3 {
-            margin: 7px 0;
-
-            font-size: 16px;
-        }
-
-        .timeline-card p {
-            color: #888;
-
-            font-size: 11px;
-            line-height: 1.7;
-        }
-
-
-        /* =========================================================
-           FILM & MEDIA
-        ========================================================= */
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            grid-template-rows: 250px 250px;
-            gap: 12px;
-        }
-
-        .media-card {
-            position: relative;
-            overflow: hidden;
-
-            border-radius: 15px;
-
-            border: 1px solid var(--border);
-
-            background: #0a0a0a;
-        }
-
-        .media-card:first-child {
-            grid-row: span 2;
-        }
-
-        .media-card img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            opacity: 0.7;
-
-            transition: 0.5s ease;
-        }
-
-        .media-card:hover img {
-            transform: scale(1.08);
-            opacity: 0.9;
-        }
-
-        .media-overlay {
-            position: absolute;
-            inset: 0;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-
-            padding: 22px;
-
-            background:
-                linear-gradient(
-                    transparent 30%,
-                    rgba(0,0,0,0.9)
-                );
-        }
-
-        .media-overlay h3 {
-            font-size: 17px;
-        }
-
-        .media-overlay p {
-            color: #aaa;
-            font-size: 10px;
-            margin-top: 5px;
-        }
-
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 20px;
-        }
-
-        .contact-info,
-        .contact-form {
-            padding: 28px;
-        }
-
-        .contact-info h3 {
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        .contact-info > p {
-            color: #888;
-
-            font-size: 12px;
-            line-height: 1.7;
-
-            margin-bottom: 30px;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-
             margin-bottom: 20px;
         }
+        .service-card h3 { font-size: 18px; margin-bottom: 15px; }
+        .service-card p { font-size: 13px; color: #aaa; line-height: 1.6; }
 
-        .contact-detail-icon {
-            width: 40px;
-            height: 40px;
+        /* =========================================================
+           TESTIMONIALS
+        ========================================================= */
 
+        .testimonials-grid {
             display: flex;
-            align-items: center;
-            justify-content: center;
-
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+        }
+        .testimonials-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+        .testimonials-grid::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
             border-radius: 10px;
-
-            color: var(--blue);
-
-            background: rgba(8,124,255,0.08);
-            border: 1px solid var(--border-blue);
         }
-
-        .contact-detail small {
-            color: #666;
-            display: block;
-            font-size: 9px;
-            margin-bottom: 3px;
+        .testimonials-grid::-webkit-scrollbar-thumb {
+            background: var(--border-blue);
+            border-radius: 10px;
         }
-
-        .contact-detail span {
-            font-size: 11px;
-            color: #ccc;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-
-            color: #777;
-
-            font-size: 9px;
-
-            margin-bottom: 7px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-
-            padding: 13px;
-
-            background: rgba(255,255,255,0.03);
-
+        .testimonial-card {
+            min-width: 350px;
+            scroll-snap-align: center;
+            padding: 30px;
             border: 1px solid var(--border);
-
-            border-radius: 8px;
-
-            color: white;
-
-            outline: none;
-
-            font-family: inherit;
-
-            font-size: 11px;
-
-            transition: 0.25s ease;
+            border-radius: var(--radius);
+            background: var(--card);
         }
-
-        .form-group textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--blue);
-            box-shadow: 0 0 20px rgba(8,124,255,0.08);
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            border-top: 1px solid var(--border);
-
-            padding: 35px 0;
-
-            color: #666;
-
-            font-size: 10px;
-        }
-
-        .footer-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .footer-logo {
-            color: white;
-            font-weight: 800;
-        }
-
-        .footer-logo span {
-            color: var(--blue);
-        }
-
-
-        /* =========================================================
-           REVEAL ANIMATION
-        ========================================================= */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-
-            transition:
-                opacity 0.8s ease,
-                transform 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .testimonial-card p { font-style: italic; color: #bbb; font-size: 13px; line-height: 1.7; margin-bottom: 20px; }
+        .testimonial-author { display: flex; align-items: center; gap: 15px; }
+        .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        .testimonial-info h4 { font-size: 14px; color: white; }
+        .testimonial-info span { font-size: 11px; color: var(--blue); }
 
 
         /* =========================================================
@@ -1525,6 +1370,10 @@
 
 
 <body>
+
+    <!-- Cursor Elements -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
     <!-- Noise -->
     <div class="noise"></div>
@@ -1972,180 +1821,6 @@
 
 
                 <div class="projects-grid" id="projectsGrid">
-
-
-                    <!-- PROJECT 1 -->
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80"
-                                alt="Campus Event"
-                            >
-
-                            <div class="project-icon">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <h3>CampusEventPro</h3>
-
-                            <p>
-                                A full-stack event management platform
-                                for colleges featuring QR attendance,
-                                team management and real-time updates.
-                            </p>
-
-                            <div class="tags">
-
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Supabase</span>
-
-                            </div>
-
-                            <div class="project-links">
-
-                                <a href="#">
-                                    LIVE DEMO →
-                                </a>
-
-                                <a href="#">
-                                    GITHUB →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 2 -->
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80"
-                                alt="Attendance System"
-                            >
-
-                            <div class="project-icon">
-                                <i class="fa-solid fa-face-smile"></i>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <h3>VisionID Attendance System</h3>
-
-                            <p>
-                                Face recognition based attendance system
-                                with liveness detection, RFID integration,
-                                SQLite storage and analytics dashboard.
-                            </p>
-
-                            <div class="tags">
-
-                                <span class="tag">Python</span>
-                                <span class="tag">OpenCV</span>
-                                <span class="tag">SQLite</span>
-                                <span class="tag">Streamlit</span>
-
-                            </div>
-
-                            <div class="project-links">
-
-                                <a href="#">
-                                    VIEW PROJECT →
-                                </a>
-
-                                <a href="#">
-                                    GITHUB →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 3 -->
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=80"
-                                alt="PaperNil"
-                            >
-
-                            <div class="project-icon">
-                                <i class="fa-solid fa-file-lines"></i>
-                            </div>
-
-                        </div>
-
-                        <div class="project-content">
-
-                            <h3>PAPERNIL</h3>
-
-                            <p>
-                                A paper-free academic workflow platform
-                                for student requests, approvals,
-                                certificates and payments.
-                            </p>
-
-                            <div class="tags">
-
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">LocalStorage</span>
-
-                            </div>
-
-                            <div class="project-links">
-
-                                <a href="#">
-                                    LIVE DEMO →
-                                </a>
-
-                                <a href="#">
-                                    GITHUB →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             FILM & MEDIA
-        ====================================================== -->
-
-        <section id="contact">
-
-            <div class="container">
 
                 <div class="section-heading reveal">
 
@@ -2739,6 +2414,61 @@
             heroVisual.style.transform =
                 `translate(${x * 8}px, ${y * 8}px)`;
 
+        });
+        /* =========================================================
+           CUSTOM CURSOR
+        ========================================================== */
+        
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorOutline = document.querySelector("[data-cursor-outline]");
+        
+        if (cursorDot && cursorOutline && window.innerWidth > 800) {
+            window.addEventListener("mousemove", (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+                
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: "forwards" });
+            });
+            
+            const interactables = document.querySelectorAll("a, button, input, textarea, .project-card, .service-card");
+            interactables.forEach(el => {
+                el.addEventListener("mouseenter", () => cursorOutline.classList.add("cursor-hover"));
+                el.addEventListener("mouseleave", () => cursorOutline.classList.remove("cursor-hover"));
+            });
+        }
+
+        /* =========================================================
+           3D TILT EFFECT
+        ========================================================== */
+        
+        const tiltCards = document.querySelectorAll(".tilt-card, .project-card");
+        
+        tiltCards.forEach(card => {
+            card.addEventListener("mousemove", (e) => {
+                if (window.innerWidth < 800) return;
+                
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            });
         });
 
     </script>
