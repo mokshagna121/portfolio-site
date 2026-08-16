@@ -32,9 +32,9 @@
         <form id="projectForm">
           <label for="title">Project title</label><input id="title" required maxlength="80" placeholder="e.g. VisionID">
           <label for="description">Description</label><textarea id="description" required maxlength="280" placeholder="A short explanation of the project"></textarea>
-          <label for="image">Image URL</label><input id="image" type="url" placeholder="https://...">
+          <label for="image">Image URL</label><input id="image" type="text" placeholder="https://... or image path">
           <div class="row"><div><label for="icon">Font Awesome icon</label><input id="icon" value="fa-solid fa-code" placeholder="fa-solid fa-code"></div><div><label for="tags">Tags</label><input id="tags" placeholder="AI, Python, IoT"></div></div>
-          <div class="row"><div><label for="demoUrl">Live demo URL</label><input id="demoUrl" type="url" placeholder="https://..."></div><div><label for="githubUrl">GitHub URL</label><input id="githubUrl" type="url" placeholder="https://github.com/... "></div></div>
+          <div class="row"><div><label for="demoUrl">Live demo URL</label><input id="demoUrl" type="text" placeholder="https://... or #"></div><div><label for="githubUrl">GitHub URL</label><input id="githubUrl" type="text" placeholder="https://github.com/... or #"></div></div>
           <div class="form-actions"><button type="submit" id="saveButton">Save project</button><button type="button" class="secondary" id="cancelButton" hidden>Cancel edit</button></div>
         </form>
         <p class="status" id="status" role="status"></p>

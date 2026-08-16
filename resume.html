@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Pittala Bala Mokshagna Reddy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #111;
+            background: #f8fafc;
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        .resume-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 45px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #087cff;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            color: #475569;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #087cff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #087cff;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        p,
+        li {
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 14px;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .item-sub {
+            font-size: 13px;
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-print {
+            background: #087cff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-print:hover {
+            background: #0062d1;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-card {
+                box-shadow: none;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="actions">
+        <button class="btn-print" onclick="window.print()">🖨️ PRINT / SAVE AS PDF</button>
+    </div>
+
+    <br>
+
+    <main class="resume-card">
+        <header class="header">
+            <h1>PITTALA BALA MOKSHAGNA REDDY</h1>
+            <div class="contact-info">
+                <span>📞 +91-7416085086</span>
+                <span>✉️ <a href="mailto:balamokshagnapittala@gmail.com">balamokshagnapittala@gmail.com</a></span>
+                <span>💻 <a href="https://github.com/mokshagna121" target="_blank">github.com/mokshagna121</a></span>
+                <span>💼 <a href="https://www.linkedin.com/in/mokshagna1234321/" target="_blank">linkedin.com/in/mokshagna1234321</a></span>
+                <span>📸 <a href="https://www.instagram.com/mokshagna_reddy___" target="_blank">instagram.com/mokshagna_reddy___</a></span>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Summary</h2>
+            <p>Computer Science Engineering student with strong skills in HTML, CSS, JavaScript, Java and SQL.
+                Passionate about Front-End Development and building responsive web applications. Quick learner with good
+                problem-solving and teamwork skills.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Skills</h2>
+            <p><strong>Programming:</strong> Java, JavaScript, Python, SQL</p>
+            <p><strong>Web Development:</strong> HTML5, CSS3, JavaScript, Responsive Design, Bootstrap (Basics), Node.js
+                (Basics), REST APIs</p>
+            <p><strong>Tools:</strong> Git, GitHub, VS Code, MS Excel, MS Word, Google Docs, Google Sheets, Power BI</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <div style="margin-bottom: 16px;">
+                <div class="item-header">
+                    <span>Restaurant Reservation System | HTML, CSS, JavaScript, Node.js</span>
+                    <span>2026</span>
+                </div>
+                <ul>
+                    <li>Developed a responsive restaurant reservation website.</li>
+                    <li>Created interactive booking forms and responsive UI.</li>
+                    <li>Integrated backend APIs for reservation management.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+                <div class="item-header">
+                    <span>Smart Attendance System (RFID + Face Recognition) | Python, OpenCV, Arduino</span>
+                    <span>2026</span>
+                </div>
+                <ul>
+                    <li>Built a dual-authentication attendance system using RFID and face recognition.</li>
+                    <li>Automated attendance logging with improved security and accuracy.</li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="item-header">
+                    <span>Personal Portfolio Website | HTML, CSS, JavaScript</span>
+                    <span>2026</span>
+                </div>
+                <ul>
+                    <li>Designed a responsive portfolio website showcasing projects and certifications.</li>
+                    <li>Implemented modern UI and mobile-friendly layouts.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Certifications</h2>
+            <ul>
+                <li>Software Developer Certification – MSME (2026)</li>
+                <li>Introduction to Generative AI – IBM SkillsBuild (2026)</li>
+                <li>AI Skills Passport – EY & Microsoft (2026)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+
+            <div style="margin-bottom: 12px;">
+                <div class="item-header">
+                    <span>B.Tech in Computer Science Engineering</span>
+                    <span>Expected 2028</span>
+                </div>
+                <div class="item-sub">St. Peter’s Engineering College, Hyderabad</div>
+                <p>CGPA: 8.4 / 10</p>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <div class="item-header">
+                    <span>Telangana State Board of Intermediate Education</span>
+                    <span>2024</span>
+                </div>
+                <div class="item-sub">Narayana Junior College</div>
+                <p>GPA: 8.1 / 10</p>
+            </div>
+
+            <div>
+                <div class="item-header">
+                    <span>Board of Secondary Education (SSC)</span>
+                    <span>2022</span>
+                </div>
+                <div class="item-sub">Narayana High School</div>
+                <p>GPA: 8.2 / 10</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
